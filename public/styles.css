@@ -12,11 +12,10 @@ h1 {
   display: inline-block;
   position: sticky;
   top: 25px;
-  right: 50px;
+  right: 120px;
   font-family: 'Montserrat', sans-serif;
   max-width: 25%;
   min-width: 25%;
-  margin-right: 75px;
 }
 
 #reviews {
