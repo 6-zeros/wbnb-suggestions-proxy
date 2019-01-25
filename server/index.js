@@ -7,21 +7,20 @@ const port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 
-// Reviews - James
-// app.use('/api/reviews/rooms/:roomid', proxy({ target: 'http://54.202.111.150' }));
-// app.use('/api/ratings/rooms/:roomid', proxy({ target: 'http://54.202.111.150' }));
+// Reviews - Josh
+// app.use('/api/reviews/rooms/:roomid', proxy({target: 'http://54.202.111.150'}));
+// app.use('/api/ratings/rooms/:roomid', proxy({target: 'http://54.202.111.150'}));
 
-// Image Gallery - Josh
-// app.use('/rooms/:id/photos', proxy({ target: 'http://54.175.98.175' }));
+// Image Gallery - James
+app.use('/rooms/:id/photos', proxy({ target: 'http://54.201.165.207' }));
 
-// // Booking - Kevin
-// app.use('/api/rooms/:id', proxy({target: 'http://54.67.99.254'}));
+// // Booking - George
+app.use('/api/rooms/:id', proxy({ target: 'http://54.193.63.77:3000' }));
 
-// Recommendations - Eric
-// app.use('/house', proxy({ target: 'http://18.223.185.89' }));
-app.use(proxy({ target: 'http://localhost:3123' }));
+// // Recommendations - Seyma
+app.use('/:id/suggestions', proxy({ target: 'http://13.57.206.20:3123' }));
 
-app.use(express.static("./public"));
+app.use('/rooms/:roomid', express.static("./public"));
 
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
